@@ -1,6 +1,3 @@
-//Complete darkness=0.25V, 0.2 ohm
-//Complete light=4.22V, 60K ohm
-
 #include <Servo.h>
 
 Servo myservo;  // create servo object to control a servo
@@ -15,7 +12,7 @@ void setup() {
 
 void loop() {
   val = analogRead(LDR);            // reads the value of the potentiometer (value between 0 and 1023)
-  val = map(val, 63, 1010, 0, 180);     // scale it for use with the servo (value between 0 and 180)
+  val = map(val, 63, 130, 0, 180);     // scale it for use with the servo (value between 0 and 180)
   myservo.write(val);                  // sets the servo position according to the scaled value
   Serial.println(val);
 }
